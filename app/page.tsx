@@ -12,8 +12,7 @@ export default function Page() {
     const {show} = useShowChart()
 
    return <>
-       <main>
-          <div className={'grid grid-cols-3 gap-2'}>
+       <main className={'grid lg:grid-cols-3 grid-cols-1 gap-2'}>
               <section className={'col-span-1'}>
                   <EstimationForm/>
               </section>
@@ -36,7 +35,6 @@ export default function Page() {
                       </Tabs>
                   </div>
               </section>
-          </div>
        </main>
    </>
 }

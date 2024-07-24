@@ -23,7 +23,7 @@ const chartConfig = {
 
 export function Barchart() {
     return (
-        <Card className="w-[55%]">
+        <Card className="w-[100%] lg:w-[92%] xl:w-[55%]">
             <CardHeader>
                 <CardTitle>Bar Chart</CardTitle>
                 <CardDescription>January - June 2024</CardDescription>
