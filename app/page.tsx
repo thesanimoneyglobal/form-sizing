@@ -4,9 +4,9 @@ import EstimationForm from "@/components/estimationForm";
 import Guide from "@/components/guide";
 import {Barchart} from "@/components/charts/barchart";
 import {Piechart} from "@/components/charts/piechart";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {useShowChart} from "@/state";
 import Placeholder from "@/components/charts/placeholder";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 
 export default function Page() {
     const {show} = useShowChart()
