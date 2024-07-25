@@ -8,7 +8,7 @@ const estimation = async (values: FormEstimation) => {
 
     await new Promise(resolve => setTimeout(resolve, 3000));
 
-    return { success: 'Estimated size successfully.' };
+    return { success: 'Size estimated successfully.' };
 }
 
 export default estimation;
