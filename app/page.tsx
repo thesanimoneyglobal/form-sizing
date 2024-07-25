@@ -16,10 +16,15 @@ export default function Page() {
    return <>
        <main className={'grid lg:grid-cols-3 grid-cols-1 gap-2'}>
               <section className={'col-span-1'}>
+                  <div className={'lg:hidden mb-5'}>
+                      <Guide/>
+                  </div>
                   <EstimationForm/>
               </section>
               <section className={'col-span-2 space-y-4'}>
-                  <Guide/>
+                  <div className={'lg:block hidden'}>
+                      <Guide/>
+                  </div>
                   <div className={'grid grid-cols-1 gap-1'}>
                       <Tabs defaultValue="barchart">
                           <TabsList>
