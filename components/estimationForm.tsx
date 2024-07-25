@@ -14,11 +14,12 @@ import {toast} from "sonner";
 import estimation from "@/actions/estimation";
 import {useTransition} from "react";
 import {BeatLoader} from "react-spinners";
-import {useShowChart} from "@/state";
+import {useShowChart, useShowLoading} from "@/state";
 
 function EstimationForm() {
     const [isPending, startTransition] = useTransition()
     const {setShow} = useShowChart()
+    const {setShowLoading} = useShowLoading()
 
     const form = useForm<FormEstimation>({
         resolver: zodResolver(formSchema),
@@ -34,13 +35,17 @@ function EstimationForm() {
         },
     })
 
+
     function onSubmit(values: FormEstimation) {
         startTransition(() => {
+            setShowLoading(true)
             estimation(values).then(res => {
                 if (res.success) toast.success(res.success)
                 else if (res.error) toast.error(res.error)
                 setShow(true)
+                setShowLoading(false)
             })
+
         })
     }
 

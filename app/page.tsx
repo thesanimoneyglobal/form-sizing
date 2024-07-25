@@ -4,12 +4,14 @@ import EstimationForm from "@/components/estimationForm";
 import Guide from "@/components/guide";
 import {Barchart} from "@/components/charts/barchart";
 import {Piechart} from "@/components/charts/piechart";
-import {useShowChart} from "@/state";
+import {useShowChart, useShowLoading} from "@/state";
 import Placeholder from "@/components/charts/placeholder";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 
 export default function Page() {
     const {show} = useShowChart()
+    const {showLoading} = useShowLoading()
+
 
    return <>
        <main className={'grid lg:grid-cols-3 grid-cols-1 gap-2'}>
@@ -25,7 +27,7 @@ export default function Page() {
                               {/*<TabsTrigger value="piechart">Piechart</TabsTrigger>*/}
                           </TabsList>
                           <TabsContent value="barchart">
-                              {show ? <Barchart/> : <Placeholder/>}
+                              {!showLoading && show ? <Barchart/> : <Placeholder/>}
                           </TabsContent>
                           <TabsContent value="piechart">
                               <div>
