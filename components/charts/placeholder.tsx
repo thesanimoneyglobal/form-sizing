@@ -11,7 +11,7 @@ function Placeholder() {
             <CardContent className="flex flex-col justify-center items-center">
                 {!showLoading ? <>
                     <p>Your estimation will be showed here, please fill parameters.</p>
-                    <ChartColumnBig className="mt-4" color="lightgray" size={100}/> </> : <BeatLoader size={20} color={'gray'}/>}
+                    <ChartColumnBig className="mt-4" color="lightgray" size={100}/> </> : <BeatLoader size={20} color={'DodgerBlue'}/>}
             </CardContent>
         </Card>
     </>

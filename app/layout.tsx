@@ -5,6 +5,7 @@ import {ReactNode} from "react";
 import {Toaster} from "@/components/ui/sonner";
 import Navbar from "@/components/navbar";
 import {ThemeProvider} from "@/components/theme-provider";
+import {CircleCheck} from "lucide-react";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -31,7 +32,7 @@ export default function RootLayout({
                 <Navbar/>
                 {children}
             </main>
-            <Toaster/>
+            <Toaster icons={{success: <CircleCheck size={'20'} color={'DodgerBlue'}/>}}/>
         </ThemeProvider>
         </body>
         </html>
