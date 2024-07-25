@@ -26,7 +26,7 @@ export function Barchart() {
         <Card className="w-[100%] lg:w-[92%] xl:w-[55%]">
             <CardHeader>
                 <CardTitle>Bar Chart</CardTitle>
-                <CardDescription>January - June 2024</CardDescription>
+                <CardDescription>Based on form data: 2022-2023</CardDescription>
             </CardHeader>
             <CardContent>
                 <ChartContainer config={chartConfig}>
