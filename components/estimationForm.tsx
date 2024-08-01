@@ -236,7 +236,7 @@ function EstimationForm() {
                                 )}
                             />
                         </div>
-                        <Button disabled={isPending || !form.formState.isValid} type="submit" size={'lg'}>
+                        <Button disabled={isPending} type="submit" size={'lg'}>
                             Calculate Results
                             {isPending && <BeatLoader size={'7px'} color={'white'} className={'ml-2'}/>}
                         </Button>
