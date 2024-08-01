@@ -1,14 +1,5 @@
 import { create } from 'zustand'
-
-type Store = {
-    show: boolean
-    setShow: (show: boolean) => void
-}
-
-type StoreLoading = {
-    showLoading: boolean
-    setShowLoading: (showLoading: boolean) => void
-}
+import {FormComplexity, Store, StoreComplexity, StoreLoading} from "@/types";
 
 export const useShowChart = create<Store>()((set) => ({
     show: false,
@@ -19,3 +10,8 @@ export const useShowLoading = create<StoreLoading>()((set) => ({
     showLoading: false,
     setShowLoading: (showLoading: boolean) => set(() => ({ showLoading })),
 }))
+
+export const useStoreComplexity = create<StoreComplexity>((set) => ({
+    formComplexityData: [],
+    setFormComplexityData: (data: FormComplexity[]) => set({ formComplexityData: data })
+}));

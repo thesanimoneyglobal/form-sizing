@@ -14,19 +14,21 @@ import {toast} from "sonner";
 import estimation from "@/actions/estimation";
 import {useTransition} from "react";
 import {BeatLoader} from "react-spinners";
-import {useShowChart, useShowLoading} from "@/state";
+import {useShowChart, useShowLoading, useStoreComplexity} from "@/state";
 
 function EstimationForm() {
     const [isPending, startTransition] = useTransition()
     const {setShow} = useShowChart()
     const {setShowLoading} = useShowLoading()
+    const {setFormComplexityData} = useStoreComplexity()
+
 
     const form = useForm<FormEstimation>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             numberOfItems: '0',
             numberOfScores: '0',
-            formType: '',
+            formType: '10',
             branchingLogic: false,
             complexFunctionality: false,
             normativeScoring: false,
@@ -35,13 +37,15 @@ function EstimationForm() {
         },
     })
 
-
     function onSubmit(values: FormEstimation) {
         startTransition(() => {
             setShowLoading(true)
             estimation(values).then(res => {
-                if (res.success) toast.success(res.success)
-                else if (res.error) toast.error(res.error)
+                if (res?.success) {
+                    toast.success(res.success)
+                    setFormComplexityData(res?.data)
+                }
+                else if (res?.error) toast.error(res.error)
                 setShow(true)
                 setShowLoading(false)
             })
@@ -94,7 +98,7 @@ function EstimationForm() {
                                     render={({field}) => (
                                         <FormItem>
                                             <FormLabel>Form Type</FormLabel>
-                                            <Select disabled={isPending} onValueChange={field.onChange} defaultValue={field.value}>
+                                            <Select  disabled={isPending} onValueChange={field.onChange} defaultValue={field.value}>
                                                 <FormControl>
                                                     <SelectTrigger>
                                                         <SelectValue placeholder="Select from type"/>
