@@ -19,7 +19,7 @@ export function Barchart() {
             item.probability > max.probability ? item : max, formComplexityData[0]);
 
     return (
-        <Card className="w-[100%] lg:w-[92%] xl:w-[55%]">
+        <Card className="w-[100%] lg:w-[92%] xl:w-[57%]">
             <CardHeader>
                 <CardTitle>Bar Chart</CardTitle>
                 <CardDescription>Based on form data: 2022-2023</CardDescription>

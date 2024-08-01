@@ -22,7 +22,6 @@ function EstimationForm() {
     const {setShowLoading} = useShowLoading()
     const {setFormComplexityData} = useStoreComplexity()
 
-
     const form = useForm<FormEstimation>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -49,7 +48,6 @@ function EstimationForm() {
                 setShow(true)
                 setShowLoading(false)
             })
-
         })
     }
 
