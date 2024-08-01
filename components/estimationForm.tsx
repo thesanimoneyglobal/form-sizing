@@ -66,7 +66,7 @@ function EstimationForm() {
                                     <FormItem>
                                         <FormLabel>Number of items</FormLabel>
                                         <FormControl>
-                                            <Input disabled={isPending} type={'number'} placeholder="Number of items" {...field} />
+                                            <Input disabled={isPending} type={'text'} placeholder="Number of items" {...field} />
                                         </FormControl>
                                         <FormDescription>
                                             Please enter number of items.
@@ -82,7 +82,7 @@ function EstimationForm() {
                                     <FormItem>
                                         <FormLabel>Number of scores</FormLabel>
                                         <FormControl>
-                                            <Input disabled={isPending} type={'number'} placeholder="Number of scores" {...field} />
+                                            <Input disabled={isPending} type={'text'} placeholder="Number of scores" {...field} />
                                         </FormControl>
                                         <FormDescription>
                                             Please enter number of scores.
