@@ -131,6 +131,7 @@ function EstimationForm() {
                                             </div>
                                             <FormControl>
                                                 <Switch
+                                                    name={'switch_1'}
                                                     disabled={isPending}
                                                     checked={field.value}
                                                     onCheckedChange={field.onChange}
@@ -155,6 +156,7 @@ function EstimationForm() {
                                             </div>
                                             <FormControl>
                                                 <Switch
+                                                    name={'switch_2'}
                                                     disabled={isPending}
                                                     checked={field.value}
                                                     onCheckedChange={field.onChange}
@@ -179,6 +181,7 @@ function EstimationForm() {
                                         </div>
                                         <FormControl>
                                             <Switch
+                                                name={'switch_3'}
                                                 disabled={isPending}
                                                 checked={field.value}
                                                 onCheckedChange={field.onChange}
@@ -203,6 +206,7 @@ function EstimationForm() {
                                         </div>
                                         <FormControl>
                                             <Switch
+                                                name={'switch_4'}
                                                 disabled={isPending}
                                                 checked={field.value}
                                                 onCheckedChange={field.onChange}
@@ -227,6 +231,7 @@ function EstimationForm() {
                                         </div>
                                         <FormControl>
                                             <Switch
+                                                name={'switch_5'}
                                                 disabled={isPending}
                                                 checked={field.value}
                                                 onCheckedChange={field.onChange}
