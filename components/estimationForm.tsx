@@ -103,9 +103,10 @@ function EstimationForm() {
                                                     </SelectTrigger>
                                                 </FormControl>
                                                 <SelectContent className={'w-full'}>
-                                                    <SelectItem value="10">ClinRO</SelectItem>
+                                                    <SelectItem value="10">ClinRO/PerfO</SelectItem>
                                                     <SelectItem value="11">PRO</SelectItem>
                                                     <SelectItem value="12">ObsRO</SelectItem>
+                                                    <SelectItem value="13">ClinReadPRO/ClinReadObsRO</SelectItem>
                                                 </SelectContent>
                                             </Select>
                                             <FormMessage/>
@@ -176,7 +177,7 @@ function EstimationForm() {
                                                 Normative Scoring
                                             </FormLabel>
                                             <FormDescription>
-                                                Please choose if complex normative scoring exists.
+                                                Please indicate if normative scoring exists.
                                             </FormDescription>
                                         </div>
                                         <FormControl>
@@ -184,12 +185,10 @@ function EstimationForm() {
                                                 name={'switch_3'}
                                                 disabled={isPending}
                                                 checked={field.value}
-                                                onCheckedChange={field.onChange}
-                                            />
+                                                onCheckedChange={field.onChange}/>
                                         </FormControl>
                                     </FormItem>
-                                )}
-                            />
+                                )}/>
                             <FormField
                                 control={form.control}
                                 name="formMapping"
@@ -201,7 +200,7 @@ function EstimationForm() {
                                                 Form Mapping
                                             </FormLabel>
                                             <FormDescription>
-                                                Please choose if form mapping scoring required.
+                                                Please choose if form mapping is required.
                                             </FormDescription>
                                         </div>
                                         <FormControl>
@@ -213,8 +212,7 @@ function EstimationForm() {
                                             />
                                         </FormControl>
                                     </FormItem>
-                                )}
-                            />
+                                )}/>
                             <FormField
                                 control={form.control}
                                 name="webServiceSetup"
@@ -234,12 +232,10 @@ function EstimationForm() {
                                                 name={'switch_5'}
                                                 disabled={isPending}
                                                 checked={field.value}
-                                                onCheckedChange={field.onChange}
-                                            />
+                                                onCheckedChange={field.onChange}/>
                                         </FormControl>
                                     </FormItem>
-                                )}
-                            />
+                                )}/>
                         </div>
                         <Button disabled={isPending} type="submit" size={'lg'}>
                             Calculate Results

@@ -31,8 +31,6 @@ const estimation = async (values: FormEstimation) => {
             probability: parseFloat(item.probability.toFixed(2)) * 100,
         }));
 
-        console.log(reformattedData)
-
         if (response.ok) {
             return {success: 'Size estimated successfully.', data: reformattedData};
         } else {

@@ -22,7 +22,7 @@ export function Barchart() {
         <Card className="w-[100%] lg:w-[92%] xl:w-[57%]">
             <CardHeader>
                 <CardTitle>Bar Chart</CardTitle>
-                <CardDescription>Based on form data: 2022-2023</CardDescription>
+                <CardDescription>Estimated size is displayed below:</CardDescription>
             </CardHeader>
             <CardContent>
                 <ChartContainer config={chartConfig}>
