@@ -26,7 +26,7 @@ export default function QuickGuideButton() {
           <div className="space-y-4">
             <section>
               <h3 className="text-lg font-semibold">Getting Started</h3>
-              <p>Welcome to our application! Here's how to get started:</p>
+              <p>Welcome to our application! Here&lsquo;s how to get started:</p>
               <ul className="list-disc pl-5 mt-2">
                 <li>Create an account or log in</li>
                 <li>Set up your profile</li>

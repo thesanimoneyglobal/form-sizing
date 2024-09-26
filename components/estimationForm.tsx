@@ -171,7 +171,7 @@ function EstimationForm() {
                           </FormLabel>
                         </MiniGuideTooltip>
                         <FormDescription>
-                        Please indicate if branching logic will be needed. (The need for the form adapts based on your answers). For example, if you answer "Yes" to Question 1, you'll need to answer additional questions 1a through 1g. But if you answer "No," you can skip those and move straight to Question 2.
+                        Please indicate if branching logic will be needed. (The need for the form adapts based on your answers). For example, if you answer &quot;Yes&quot; to Question 1, you&apos;ll need to answer additional questions 1a through 1g. But if you answer &quot;No,&quot; you can skip those and move straight to Question 2.
                         </FormDescription>
                       </div>
                       <FormControl>
