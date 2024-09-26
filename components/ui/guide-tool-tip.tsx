@@ -19,7 +19,7 @@ export default function MiniGuideTooltip({ children, description }: MiniGuideToo
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
+        <TooltipTrigger  asChild>
           <div className="inline-flex items-center gap-1 group">
             {children}
             <HelpCircle className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
