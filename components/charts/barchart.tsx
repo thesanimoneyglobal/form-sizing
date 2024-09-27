@@ -19,7 +19,7 @@ export function Barchart() {
             item.probability > max.probability ? item : max, formComplexityData[0]);
 
     return (
-        <Card className="w-[100%] lg:w-[92%] xl:w-[57%]">
+        <Card className="w-[100%] lg:w-[100%] xl:w-[100%] py-7">
             <CardHeader>
                 <CardTitle>Bar Chart</CardTitle>
                 <CardDescription>Estimated size is displayed below:</CardDescription>

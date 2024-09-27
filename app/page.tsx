@@ -14,24 +14,24 @@ export default function Page() {
 
 
    return <>
-       <main className={'grid lg:grid-cols-3 grid-cols-1 gap-2'}>
-              <section className={'col-span-1'}>
+       <main className={'grid lg:grid-cols-10 grid-cols-1 gap-2'}>
+              <section className={'col-span-5'}>
                   <div className={'lg:hidden mb-5'}>
                       <Guide/>
                   </div>
                   <EstimationForm/>
               </section>
-              <section className={'col-span-2 space-y-4'}>
+              <section className={'col-span-5 space-y-4'}>
                   <div className={'lg:block hidden'}>
                       <Guide/>
                   </div>
-                  <div className={'grid grid-cols-1 gap-1'}>
+                  <div className={'w-full'}>
                       <Tabs defaultValue="barchart">
                           <TabsList>
                               <TabsTrigger value="barchart">Barchart</TabsTrigger>
                               {/*<TabsTrigger value="piechart">Piechart</TabsTrigger>*/}
                           </TabsList>
-                          <TabsContent value="barchart">
+                          <TabsContent className="w-full" value="barchart">
                               {!showLoading && show ? <Barchart/> : <Placeholder/>}
                           </TabsContent>
                           <TabsContent value="piechart">

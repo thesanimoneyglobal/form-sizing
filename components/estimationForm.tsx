@@ -67,7 +67,7 @@ function EstimationForm() {
   return (
     <>
       <Card>
-        <CardContent className={"py-4"}>
+        <CardContent className={"py-4 overflow-y-auto"}>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-2 gap-x-4 gap-y-3">
@@ -114,8 +114,8 @@ function EstimationForm() {
                       <FormMessage />
                       <FormDescription>
                         Please enter the number of scores to be generated in the
-                        form. This includes any calculated outputs including
-                        subscores, domain scores, total scores etc.
+                        form. <i>(This includes any calculated outputs including
+                        subscores, domain scores, total scores etc.)</i>
                       </FormDescription>
                     </FormItem>
                   )}
@@ -130,6 +130,9 @@ function EstimationForm() {
                           description="ClinRO - Clinical Reported Outcome, ObsRO - Observer Reported Outcome, PRO - Patient Reported Outcome">
                           <FormLabel>Form Type</FormLabel>
                         </MiniGuideTooltip>
+                        <FormDescription>
+                          Please choose the form administration type
+                        </FormDescription>
                         <Select
                           disabled={isPending}
                           onValueChange={field.onChange}
@@ -150,9 +153,7 @@ function EstimationForm() {
                           </SelectContent>
                         </Select>
                         <FormMessage />
-                        <FormDescription>
-                          Please choose the form administration type
-                        </FormDescription>
+                    
                       </FormItem>
                     )}
                   />
@@ -165,13 +166,13 @@ function EstimationForm() {
                   render={({ field }) => (
                     <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
                       <div className="space-y-0.5">
-                        <MiniGuideTooltip description="For example, if you answer “Yes” to Question 1, you   questions 1a – 1g will be required. However, if you answer “No” to question 1, 1a-1g will be skipped and the user will be brought directly to question 2.">
+                        <MiniGuideTooltip description="For example, if you answer “Yes” to Question 1, you'll need to answer additional questions 1a through 1g. However, if you answer “No” to question 1, 1a-1g will be skipped and the user will be brought directly to question 2. Or another example, the M.I.N.I. uses links on each page rather than traditional navigation arrows, to decrease the risks of manipulating data.">
                           <FormLabel className="text-base">
                             Branching Logic
                           </FormLabel>
                         </MiniGuideTooltip>
                         <FormDescription>
-                        Please indicate if branching logic will be needed. (The need for the form adapts based on your answers). For example, if you answer &quot;Yes&quot; to Question 1, you&apos;ll need to answer additional questions 1a through 1g. But if you answer &quot;No,&quot; you can skip those and move straight to Question 2.
+                        Please indicate if branching logic will be needed. <i>(The need for the form adapts based on your answers).</i>
                         </FormDescription>
                       </div>
                       <FormControl>
@@ -191,13 +192,14 @@ function EstimationForm() {
                   render={({ field }) => (
                     <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
                       <div className="space-y-0.5">
-                        <MiniGuideTooltip description="For example, the M.I.N.I. uses links on each page rather than traditional navigation arrows, to decrease the risks of manipulating data.">
+                        <MiniGuideTooltip description="For example, the M.I.N.I. identifies present disorder(s) based on user`s answers and then allows them to indicate the primary diagnosis.
+Other examples are computing Basal and Discontinuation rule in the Bayley scales and configuration of the Fatigue item as optional with no impact on the Cerebral FSS calculation in the Neurostatus EDSS.">
                           <FormLabel className="text-base">
                             Complex calculations
                           </FormLabel>
                         </MiniGuideTooltip>
                         <FormDescription>
-                        Please indicate if complex functionality will be required. This may include multi-step scoring, calculations more than simple sum, advanced branching logic, or non-standard form navigation,  
+                        Please indicate if complex calculations will be required. <i>(This may include multi-step scoring, calculations more than simple sum etc.)</i>
                         </FormDescription>
                       </div>
                       <FormControl>
@@ -275,7 +277,7 @@ function EstimationForm() {
                           </FormLabel>
                         </MiniGuideTooltip>
                         <FormDescription>
-                        Please indicate if web service setup is required (Scores will need to be transferred to a 3rd party vendor to be converted and sent back to the form).
+                        Please indicate if web service setup is required <i>(Scores will need to be transferred to a 3rd party vendor to be converted and sent back to the form)</i>.
                         </FormDescription>
                       </div>
                       <FormControl>
