@@ -26,20 +26,7 @@ export default function Page() {
                       <Guide/>
                   </div>
                   <div className={'w-full'}>
-                      <Tabs defaultValue="barchart">
-                          <TabsList>
-                              <TabsTrigger value="barchart">Barchart</TabsTrigger>
-                              {/*<TabsTrigger value="piechart">Piechart</TabsTrigger>*/}
-                          </TabsList>
-                          <TabsContent className="w-full" value="barchart">
-                              {!showLoading && show ? <Barchart/> : <Placeholder/>}
-                          </TabsContent>
-                          <TabsContent value="piechart">
-                              <div>
-                                  <Piechart/>
-                              </div>
-                          </TabsContent>
-                      </Tabs>
+                  {!showLoading && show ? <Barchart/> : <Placeholder/>}
                   </div>
               </section>
        </main>

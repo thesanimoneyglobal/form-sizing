@@ -5,7 +5,7 @@ function Navbar() {
     return <>
        <nav className="navbar">
            <Card className="flex flex-row items-center justify-between p-0">
-               <CardHeader>
+               <CardHeader className="flex flex-row items-center gap-x-2">
                    <CardTitle className="text-xl font-semibold">
                        Size Estimation Tool
                    </CardTitle>
