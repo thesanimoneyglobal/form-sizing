@@ -2,9 +2,8 @@
 
 import { TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent} from "@/components/ui/chart";
-import {useStoreComplexity} from "@/state";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 const chartConfig = {
     desktop: {
@@ -13,11 +12,18 @@ const chartConfig = {
     },
 } satisfies ChartConfig
 
-export function Barchart() {
-    const {formComplexityData} = useStoreComplexity()
-    const biggestValue = formComplexityData.reduce((max, item) =>
-            item.probability > max.probability ? item : max, formComplexityData[0]);
+const formComplexityData = [
+    { label: "S", probability: 5 },
+    { label: "M", probability: 40 },
+    { label: "L", probability: 50 },
+    { label: "XL", probability: 5 },
+];
 
+const biggestValue = formComplexityData.reduce((max, item) =>
+    item.probability > max.probability ? item : max, formComplexityData[0]
+);
+
+export function Barchart() {
     return (
         <Card className="w-[100%] lg:w-[100%] xl:w-[100%] py-3">
             <CardHeader>
@@ -45,7 +51,7 @@ export function Barchart() {
             </CardContent>
             <CardFooter className="flex-col items-start gap-2 text-sm">
                 <div className="flex gap-2 font-medium leading-none">
-                   The highest probability is {biggestValue.label} - {biggestValue.probability}% <TrendingUp className="h-4 w-4" />
+                    The highest probability is {biggestValue.label} - {biggestValue.probability}% <TrendingUp className="h-4 w-4" />
                 </div>
                 <div className="leading-none text-muted-foreground">
                     Enter new data to regenerate results.
